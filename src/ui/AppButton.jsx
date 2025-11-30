@@ -6,13 +6,15 @@ const AppButton = ({
   icon: Icon,
   iconSize = 20,
   className = "",
-  onClick,
+  callback,
   type = "button",
+  disabled = false,
 }) => {
   return (
     <button
       type={type}
-      onClick={onClick}
+      disabled={disabled}
+      onClick={callback}
       className={`group relative overflow-hidden rounded-full px-8 py-4 font-semibold transition flex items-center gap-2 ${className}`}
     >
       {Icon && <Icon size={iconSize} className="!text-current z-10" />}

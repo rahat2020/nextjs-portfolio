@@ -9,7 +9,7 @@ export default function AboutMe() {
   return (
     <div
       id="aboutme"
-      className="min-h-screen bg-gradient-to-br from-green-950 via-gray-900 to-black text-white py-20 px-4 sm:px-6 lg:px-8"
+      className="h-full bg-gradient-to-br from-green-950 via-gray-900 to-black text-white py-20 px-4 sm:px-6 lg:px-8"
     >
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -57,7 +57,7 @@ export default function AboutMe() {
                 Exploring Creativity to Shape a{" "}
                 <span className="text-lime-400">Better Future.</span>
               </h2>
-              <p className="text-gray-300 text-md">
+              <p className="text-gray-300 text-sm md:text-md">
                 I transform imagination into impactful and meaningful designs
                 that inspire change, spark innovation, and redefine digital
                 creativity.

@@ -7,9 +7,9 @@ import AppButton from "@/ui/AppButton";
 const Nabvar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
-    <nav className="fixed top-0 w-full backdrop-blur-md z-50 border-b-1 border-lime-800 shadow-md">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+    <nav className="fixed top-0 w-full z-50 px-4 mt-4">
+      <div className="max-w-7xl mx-auto px-4 backdrop-blur-md sm:px-6 rounded-full border-1 border-lime-950 shadow-md">
+        <div className="flex justify-between items-center h-19">
           {/* Logo */}
           <div className="flex items-center">
             <div className="relative">
@@ -35,7 +35,7 @@ const Nabvar = () => {
               About Me
             </Link>
             <Link
-              href="#services"
+              href="#experience"
               className="text-white hover:text-lime-400 md:text-base text-sm font-medium transition"
             >
               Experience
@@ -56,7 +56,7 @@ const Nabvar = () => {
               href="#contact"
               className="text-white hover:text-lime-400 md:text-base text-sm font-medium transition"
             >
-              Contact Us
+              Contact Me
             </Link>
           </div>
 
