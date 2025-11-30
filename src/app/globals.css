@@ -3,9 +3,15 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --e-global-color-accent: #9de600;
+  --e-global-color-3d646e8: #02010100;
 }
 
-@theme inline {
+html {
+  scroll-behavior: smooth;
+}
+
+/* @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -17,10 +23,38 @@
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
-body {
+/* body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+} */
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.animate-float-item-one {
+  animation: float 2s ease-in-out infinite;
+}
+.animate-float-item-two {
+  animation: float 3s ease-in-out infinite;
+}
+
+.backgroundcolor {
+  background-color: transparent;
+  background: radial-gradient(
+    circle at 20% 30%,
+    rgba(98, 150, 20, 0.35) 0%,
+    #0b130c 60%,
+    #000000 100%
+  );
 }
