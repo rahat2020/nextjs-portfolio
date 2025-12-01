@@ -68,15 +68,17 @@ export default function AboutMe() {
             <div className="grid sm:grid-cols-2 gap-6 bg-gray-900/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-800">
               <div>
                 <p className="text-gray-400 text-sm mb-1">Name:</p>
-                <p className="text-white font-semibold">Ethan Miller</p>
+                <p className="text-white font-semibold">Kazi Rahat</p>
               </div>
               <div>
                 <p className="text-gray-400 text-sm mb-1">Phone:</p>
-                <p className="text-white font-semibold">+880 12345 6789</p>
+                <p className="text-white font-semibold">+880 1894103578</p>
               </div>
               <div>
                 <p className="text-gray-400 text-sm mb-1">Email:</p>
-                <p className="text-white font-semibold">info@gmail.com</p>
+                <p className="text-white font-semibold">
+                  kazimdboktiar2020@gmail.com
+                </p>
               </div>
               <div>
                 <p className="text-gray-400 text-sm mb-1">Website :</p>

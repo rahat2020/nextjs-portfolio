@@ -4,6 +4,7 @@ import Hero from "./Hero/Hero";
 import AboutMe from "./AboutMe/AboutMe";
 import Projects from "./Projects";
 import ContactMe from "./Contactme";
+import Experience from "./Experience";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Nabvar />
       <Hero />
       <AboutMe />
+      <Experience />
       <Projects />
       <ContactMe />
     </div>

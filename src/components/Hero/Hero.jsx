@@ -10,6 +10,7 @@ import {
 } from "react-feather";
 import { MorphingBlob } from "@/ui/svg/MorphingBlob";
 import AppButton from "@/ui/AppButton";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -40,13 +41,19 @@ const Hero = () => {
                   icon={Briefcase}
                   className="bg-lime-400 text-black hover:bg-lime-300"
                 />
-                <button className="w-14 h-14 animate-pulse rounded-full border-2 border-lime-400 flex items-center justify-center hover:bg-lime-400 hover:text-black transition">
-                  <Play
-                    size={20}
-                    fill="currentColor"
-                    className="animate-pulse"
-                  />
-                </button>
+                <Link
+                  href="https://www.youtube.com/@rahatwebdev"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button className="w-14 h-14 animate-pulse rounded-full cursor-pointer border-2 border-lime-400 flex items-center justify-center hover:bg-lime-400 hover:text-black transition">
+                    <Play
+                      size={20}
+                      fill="currentColor"
+                      className="animate-pulse"
+                    />
+                  </button>
+                </Link>
               </div>
               <div className="flex items-center gap-2 pt-8">
                 <div className="w-10 h-10 rounded-full bg-yellow-600 flex items-center justify-center">

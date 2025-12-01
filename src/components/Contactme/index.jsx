@@ -21,7 +21,7 @@ export default function ContactMe() {
             </div>
             <h3 className="text-white text-xl font-semibold mb-3">Address</h3>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Dhaka 102, util 1216, road 45
+              Mirpur 12, Dhaka - Bangladesh
               <br />
               house of street
             </p>
@@ -34,9 +34,7 @@ export default function ContactMe() {
             </div>
             <h3 className="text-white text-xl font-semibold mb-3">E-Mail</h3>
             <p className="text-gray-400 text-sm leading-relaxed">
-              hasan@yourmail.com
-              <br />
-              themespark11@gmail.com
+              kazimdboktiar2020@gmail.com
             </p>
           </div>
 
@@ -46,11 +44,7 @@ export default function ContactMe() {
               <Phone className="w-8 h-8 text-white" />
             </div>
             <h3 className="text-white text-xl font-semibold mb-3">Call Me</h3>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              0000 - 000 - 000 00
-              <br />
-              +1234 - 000
-            </p>
+            <p className="text-gray-400 text-sm leading-relaxed">01894103578</p>
           </div>
         </div>
 
@@ -59,9 +53,14 @@ export default function ContactMe() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Left Side - Heading */}
             <div>
-              <p className="text-lime-600 text-sm font-semibold mb-2 tracking-wider uppercase">
-                GET IN TOUCH
-              </p>
+              <div className="flex items-center gap-4">
+                <div className="h-px w-12 bg-lime-500"></div>
+                <span className="text-lime-400 font-medium capitalize">
+                  GET IN TOUCH
+                </span>
+                <div className="h-px w-12 bg-lime-500"></div>
+              </div>
+              {/* <p className="text-lime-600 text-sm font-semibold mb-2 tracking-wider uppercase"></p> */}
               <h2 className="text-white text-4xl md:text-5xl font-bold mb-4">
                 Elevate your brand
                 <br />
