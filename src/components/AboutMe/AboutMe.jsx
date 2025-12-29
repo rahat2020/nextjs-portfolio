@@ -2,8 +2,8 @@
 
 import { BookOpen } from "react-feather";
 import Image from "next/image";
-import AppButton from "@/ui/AppButton";
-import { MorphingBlob } from "@/ui/svg/MorphingBlob";
+import { MorphingBlob } from "../UI/svg/MorphingBlob";
+import AppButton from "../UI/AppButton";
 
 export default function AboutMe() {
   return (
@@ -89,7 +89,7 @@ export default function AboutMe() {
             {/* Bottom Section */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
               <AppButton
-                title=" Read More"
+                title="Read More"
                 icon={BookOpen}
                 className="bg-lime-400 text-black hover:bg-lime-300"
               />

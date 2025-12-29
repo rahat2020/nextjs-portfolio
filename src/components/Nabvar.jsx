@@ -2,7 +2,7 @@
 import { Menu, Phone, X } from "react-feather";
 import React, { useState } from "react";
 import Link from "next/link";
-import AppButton from "@/ui/AppButton";
+import AppButton from "./UI/AppButton";
 
 const Nabvar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

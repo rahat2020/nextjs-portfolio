@@ -8,9 +8,9 @@ import {
   Instagram,
   Play,
 } from "react-feather";
-import { MorphingBlob } from "@/ui/svg/MorphingBlob";
-import AppButton from "@/ui/AppButton";
 import Link from "next/link";
+import { MorphingBlob } from "../UI/svg/MorphingBlob";
+import AppButton from "../UI/AppButton";
 
 const Hero = () => {
   return (

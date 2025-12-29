@@ -6,7 +6,7 @@ import Projects from "./Projects";
 import ContactMe from "./Contactme";
 import Experience from "./Experience";
 
-export default function Home() {
+const HomePage = () => {
   return (
     <div className="min-h-screen  text-white">
       {/* <div className="min-h-screen backgroundcolor !bg-black text-white"> */}
@@ -18,4 +18,5 @@ export default function Home() {
       <ContactMe />
     </div>
   );
-}
+};
+export default HomePage;

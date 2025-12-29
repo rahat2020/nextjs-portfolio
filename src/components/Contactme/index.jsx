@@ -1,5 +1,5 @@
-import AppButton from "@/ui/AppButton";
 import { MapPin, Mail, Phone, MessageCircle } from "react-feather";
+import AppButton from "../UI/AppButton";
 
 export default function ContactMe() {
   const handleSubmit = () => {

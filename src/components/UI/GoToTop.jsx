@@ -5,7 +5,6 @@ import { ArrowUp } from "react-feather";
 const GoToTop = () => {
   // states
   const [isVisible, setIsVisible] = useState(false);
-  console.log("🚀 ~ GoToTop ~ isVisible:", isVisible);
 
   // Show button when page is scrolled down
   const toggleVisibility = () => {

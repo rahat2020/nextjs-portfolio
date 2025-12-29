@@ -1,6 +1,5 @@
-import { Geist, Geist_Mono, Unbounded } from "next/font/google";
+import { Geist, Unbounded } from "next/font/google";
 import "./globals.css";
-import GoToTop from "@/ui/GoToTop";
 import { Suspense } from "react";
 
 const geistSans = Geist({
@@ -27,7 +26,7 @@ export default function RootLayout({ children }) {
       >
         <Suspense fallback={null}>
           {children}
-          <GoToTop />
+          {/* <GoToTop /> */}
         </Suspense>
       </body>
     </html>
