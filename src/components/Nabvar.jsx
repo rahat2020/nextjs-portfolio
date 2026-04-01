@@ -53,6 +53,12 @@ const Nabvar = () => {
               Projects
             </Link>
             <Link
+              href="#blog"
+              className="text-white hover:text-lime-400 md:text-base text-sm font-medium transition"
+            >
+              Blog
+            </Link>
+            <Link
               href="#contact"
               className="text-white hover:text-lime-400 md:text-base text-sm font-medium transition"
             >
@@ -92,14 +98,14 @@ const Nabvar = () => {
             <a href="#" className="block text-white hover:text-lime-400 py-2">
               Services
             </a>
-            <a href="#" className="block text-white hover:text-lime-400 py-2">
+            <a href="#projects" className="block text-white hover:text-lime-400 py-2">
               Projects
             </a>
-            <a href="#" className="block text-white hover:text-lime-400 py-2">
-              Pages
+            <a href="#blog" className="block text-white hover:text-lime-400 py-2">
+              Blog
             </a>
-            <a href="#" className="block text-white hover:text-lime-400 py-2">
-              Contact Us
+            <a href="#contact" className="block text-white hover:text-lime-400 py-2">
+              Contact Me
             </a>
             <button className="w-full bg-lime-400 text-black px-6 py-3 rounded-full font-semibold mt-4">
               Get In Touch

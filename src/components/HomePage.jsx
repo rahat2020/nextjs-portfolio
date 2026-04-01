@@ -5,6 +5,7 @@ import AboutMe from "./AboutMe/AboutMe";
 import Projects from "./Projects";
 import ContactMe from "./Contactme";
 import Experience from "./Experience";
+import Blog from "./Blog";
 
 const HomePage = () => {
   return (
@@ -15,6 +16,7 @@ const HomePage = () => {
       <AboutMe />
       <Experience />
       <Projects />
+      <Blog />
       <ContactMe />
     </div>
   );
