@@ -58,3 +58,31 @@ html {
     #000000 100%
   );
 }
+
+/* Scroll-wheel dot animation inside the mouse icon */
+@keyframes scroll-wheel {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+.animate-scroll-wheel {
+  animation: scroll-wheel 1.8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+/* Gentle bouncing chevrons */
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+}
+.animate-bounce-slow {
+  animation: bounce-slow 2s ease-in-out infinite;
+}
