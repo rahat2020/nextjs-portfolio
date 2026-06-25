@@ -55,12 +55,40 @@ const Hero = () => {
                   </button>
                 </Link>
               </div>
+<<<<<<< HEAD
               {/* <div className="flex items-center gap-2 pt-8">
                 <div className="w-10 h-10 rounded-full bg-yellow-600 flex items-center justify-center">
                   🌐
                 </div>
                 <span className="text-gray-400">www.roxthemes.com</span>
               </div> */}
+=======
+              {/* Scroll Down Indicator */}
+              <a
+                href="#aboutme"
+                className="group inline-flex items-center gap-4 pt-10 cursor-pointer"
+              >
+                {/* Mouse outline */}
+                <div className="relative w-7 h-11 rounded-full border-2 border-lime-400/60 group-hover:border-lime-400 transition-colors duration-300 flex justify-center">
+                  <div className="w-1.5 h-1.5 bg-lime-400 rounded-full mt-2 animate-scroll-wheel" />
+                </div>
+
+                {/* Text + Chevrons */}
+                <div className="flex items-center gap-2">
+                  <span className="text-gray-400 text-sm font-medium tracking-wider uppercase group-hover:text-lime-400 transition-colors duration-300">
+                    Scroll to explore
+                  </span>
+                  <div className="flex flex-col items-center -space-y-1.5 animate-bounce-slow">
+                    <svg width="14" height="8" viewBox="0 0 14 8" fill="none" className="text-lime-400/50">
+                      <path d="M1 1L7 7L13 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    <svg width="14" height="8" viewBox="0 0 14 8" fill="none" className="text-lime-400">
+                      <path d="M1 1L7 7L13 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                </div>
+              </a>
+>>>>>>> a0640fbf86a1210771791c16af0daf8a15465389
             </div>
             {/* Right Content */}
             <div className="relative">
