@@ -1,6 +1,7 @@
 import { Geist, Unbounded } from "next/font/google";
 import "./globals.css";
 import { Suspense } from "react";
+import { siteConfig } from "@/lib/seo/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,9 +14,17 @@ const geistMono = Unbounded({
 });
 
 export const metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: "Kazi Rahat - Portfolio",
-  description:
-    "Portfolio website of Kazi Rahat, a software developer specializing in web design, SEO, ERP development, and graphics design.",
+  description: siteConfig.description,
+  alternates: { canonical: siteConfig.url },
+  openGraph: {
+    title: "Kazi Rahat - Portfolio",
+    description: siteConfig.description,
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }) {

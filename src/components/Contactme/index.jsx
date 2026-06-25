@@ -1,3 +1,5 @@
+"use client";
+
 import { MapPin, Mail, Phone, MessageCircle } from "react-feather";
 import AppButton from "../UI/AppButton";
 

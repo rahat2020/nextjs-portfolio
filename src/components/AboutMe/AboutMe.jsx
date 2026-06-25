@@ -32,7 +32,7 @@ export default function AboutMe() {
             </div>
             <div className="absolute left-8 bottom-32 z-20 bg-black/90 backdrop-blur-sm rounded-2xl p-6 border border-lime-500/50 shadow-2xl">
               <div className="text-center">
-                <div className="text-5xl font-bold text-white mb-1">02+</div>
+                <div className="text-5xl font-bold text-white mb-1">03+</div>
                 <div className="text-gray-300 text-sm">Years Experience</div>
               </div>
             </div>
@@ -81,8 +81,8 @@ export default function AboutMe() {
                 </p>
               </div>
               <div>
-                <p className="text-gray-400 text-sm mb-1">Website :</p>
-                <p className="text-white font-semibold">www.dribbble.com</p>
+                <p className="text-gray-400 text-sm mb-1">LinkedIn :</p>
+                <p className="text-white font-semibold">@kazi-rahat2020/</p>
               </div>
             </div>
 

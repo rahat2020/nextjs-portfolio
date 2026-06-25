@@ -55,12 +55,12 @@ const Hero = () => {
                   </button>
                 </Link>
               </div>
-              <div className="flex items-center gap-2 pt-8">
+              {/* <div className="flex items-center gap-2 pt-8">
                 <div className="w-10 h-10 rounded-full bg-yellow-600 flex items-center justify-center">
                   🌐
                 </div>
                 <span className="text-gray-400">www.roxthemes.com</span>
-              </div>
+              </div> */}
             </div>
             {/* Right Content */}
             <div className="relative">

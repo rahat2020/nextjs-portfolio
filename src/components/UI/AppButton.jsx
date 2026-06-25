@@ -15,7 +15,7 @@ const AppButton = ({
       type={type}
       disabled={disabled}
       onClick={callback}
-      className={`group relative overflow-hidden rounded-full px-8 py-4 font-semibold transition flex items-center gap-2 ${className}`}
+      className={`group cursor-pointer relative overflow-hidden rounded-full px-8 py-4 font-semibold transition flex items-center gap-2 ${className}`}
     >
       {Icon && <Icon size={iconSize} className="!text-current z-10" />}
       <span className="relative z-10">{title}</span>

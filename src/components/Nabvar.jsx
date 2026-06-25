@@ -53,6 +53,12 @@ const Nabvar = () => {
               Projects
             </Link>
             <Link
+              href="#posts"
+              className="text-white hover:text-lime-400 md:text-base text-sm font-medium transition"
+            >
+              Posts
+            </Link>
+            <Link
               href="#contact"
               className="text-white hover:text-lime-400 md:text-base text-sm font-medium transition"
             >
@@ -83,24 +89,45 @@ const Nabvar = () => {
       {mobileMenuOpen && (
         <div className="md:hidden bg-black border-t border-gray-800">
           <div className="px-4 py-4 space-y-3">
-            <a href="#" className="block text-lime-400 py-2">
+            <Link href="/" className="block text-lime-400 py-2">
               Home
-            </a>
-            <a href="#" className="block text-white hover:text-lime-400 py-2">
+            </Link>
+            <Link
+              href="#aboutme"
+              className="block text-white hover:text-lime-400 py-2"
+            >
               About Me
-            </a>
-            <a href="#" className="block text-white hover:text-lime-400 py-2">
+            </Link>
+            <Link
+              href="#experience"
+              className="block text-white hover:text-lime-400 py-2"
+            >
+              Experience
+            </Link>
+            <Link
+              href="#services"
+              className="block text-white hover:text-lime-400 py-2"
+            >
               Services
-            </a>
-            <a href="#" className="block text-white hover:text-lime-400 py-2">
+            </Link>
+            <Link
+              href="#projects"
+              className="block text-white hover:text-lime-400 py-2"
+            >
               Projects
-            </a>
-            <a href="#" className="block text-white hover:text-lime-400 py-2">
-              Pages
-            </a>
-            <a href="#" className="block text-white hover:text-lime-400 py-2">
-              Contact Us
-            </a>
+            </Link>
+            <Link
+              href="#posts"
+              className="block text-white hover:text-lime-400 py-2"
+            >
+              Posts
+            </Link>
+            <Link
+              href="#contact"
+              className="block text-white hover:text-lime-400 py-2"
+            >
+              Contact Me
+            </Link>
             <button className="w-full bg-lime-400 text-black px-6 py-3 rounded-full font-semibold mt-4">
               Get In Touch
             </button>
