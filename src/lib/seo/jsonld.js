@@ -1,4 +1,4 @@
-import { siteConfig } from "./site";
+﻿import { siteConfig } from "./site";
 
 export function buildBreadcrumbJsonLd(items) {
   return {
@@ -67,5 +67,36 @@ export function buildExperienceJsonLd(experience) {
         },
       },
     ],
+  };
+}
+
+export function buildPersonJsonLd(about) {
+  const sameAs = about
+    ? [
+        about.linkedin_link,
+        about.facebook_link,
+        about.twitter_link,
+        about.instagram_link,
+        about.github_link,
+        about.youtube_link,
+        about.website_link,
+      ].filter(Boolean)
+    : [];
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: about?.full_name || siteConfig.author,
+    alternateName: about?.short_name || undefined,
+    jobTitle: about?.job_title || undefined,
+    description:
+      about?.meta_description || about?.header_description || siteConfig.description,
+    image: about?.avatar || undefined,
+    email: about?.email || undefined,
+    telephone: about?.phone || undefined,
+    address: about?.location || undefined,
+    url: about?.website_link || siteConfig.url,
+    sameAs,
+    knowsAbout: about?.skills?.length ? about.skills : undefined,
   };
 }

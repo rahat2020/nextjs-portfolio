@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import {
@@ -14,23 +14,11 @@ import AppButton from "../UI/AppButton";
 
 const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
 
-const contactInfo = [
-  {
-    icon: MapPin,
-    title: "Address",
-    lines: ["Mirpur 12, Dhaka - Bangladesh", "House of street"],
-  },
-  {
-    icon: Mail,
-    title: "E-Mail",
-    lines: ["kazimdboktiar2020@gmail.com"],
-  },
-  {
-    icon: Phone,
-    title: "Call Me",
-    lines: ["01894103578"],
-  },
-];
+const fallbackContact = {
+  location: "Mirpur 12, Dhaka - Bangladesh",
+  email: "kazimdboktiar2020@gmail.com",
+  phone: "01894103578",
+};
 
 const initialForm = {
   name: "",
@@ -40,10 +28,34 @@ const initialForm = {
   message: "",
 };
 
-export default function ContactMe() {
+function getContactInfo(about) {
+  const contact = { ...fallbackContact, ...about };
+
+  return [
+    {
+      icon: MapPin,
+      title: "Address",
+      lines: [contact.location].filter(Boolean),
+    },
+    {
+      icon: Mail,
+      title: "E-Mail",
+      lines: [contact.email].filter(Boolean),
+    },
+    {
+      icon: Phone,
+      title: "Call Me",
+      lines: [contact.phone].filter(Boolean),
+    },
+  ];
+}
+
+export default function ContactMe({ about }) {
   const [form, setForm] = useState(initialForm);
   const [status, setStatus] = useState("idle"); // idle | loading | success | error
   const [errorMessage, setErrorMessage] = useState("");
+  const contactInfo = getContactInfo(about);
+  const recipientEmail = about?.email || fallbackContact.email;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -57,7 +69,7 @@ export default function ContactMe() {
     if (!accessKey) {
       setStatus("error");
       setErrorMessage(
-        "Contact form isn't configured yet — missing Web3Forms access key."
+        "Contact form isn't configured yet - missing Web3Forms access key."
       );
       return;
     }
@@ -76,7 +88,7 @@ export default function ContactMe() {
           email: form.email,
           subject: form.subject || `New message from ${form.name}`,
           message: form.message,
-          to: "kazimdboktiar2020@gmail.com",
+          to: recipientEmail,
         }),
       });
 
@@ -99,7 +111,6 @@ export default function ContactMe() {
       className="bg-gradient-to-bl from-gray-900 via-black to-green-950 flex items-center justify-center px-4 py-20"
     >
       <div className="w-full max-w-7xl">
-        {/* Contact Info Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
           {contactInfo.map(({ icon: Icon, title, lines }) => (
             <div
@@ -113,7 +124,7 @@ export default function ContactMe() {
                 {title}
               </h3>
               {lines.map((line) => (
-                <p key={line} className="text-gray-400 text-sm leading-relaxed">
+                <p key={line} className="text-gray-400 text-sm leading-relaxed break-words">
                   {line}
                 </p>
               ))}
@@ -121,10 +132,8 @@ export default function ContactMe() {
           ))}
         </div>
 
-        {/* Contact Form */}
         <div className="bg-gray-950/40 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-gray-800 transition-colors duration-300 hover:border-lime-600/40">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-            {/* Left Side - Heading */}
             <div>
               <div className="flex items-center gap-4 mb-6">
                 <div className="h-px w-12 bg-lime-500"></div>
@@ -143,7 +152,6 @@ export default function ContactMe() {
               </p>
             </div>
 
-            {/* Right Side - Form */}
             <div>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -223,7 +231,7 @@ export default function ContactMe() {
                 {status === "success" && (
                   <p className="flex items-center gap-2 text-green-400 text-sm">
                     <CheckCircle className="w-4 h-4" />
-                    Thanks! Your message has been sent — I&apos;ll reply soon.
+                    Thanks! Your message has been sent - I&apos;ll reply soon.
                   </p>
                 )}
                 {status === "error" && (
