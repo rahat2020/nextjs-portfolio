@@ -9,13 +9,14 @@ import {
   Play,
 } from "react-feather";
 import Link from "next/link";
-import { MorphingBlob } from "../UI/svg/MorphingBlob";
 import AppButton from "../UI/AppButton";
+import { OrbitalRing } from "../UI/svg/OrbitalRing";
 
 const Hero = () => {
   return (
-    <div className="bg-gradient-to-br from-black via-green-950 to-gray-950">
-      <div className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+    <div className="relative bg-gradient-to-br from-black via-green-950 to-gray-950 overflow-hidden">
+      <div className="hero-grid-bg pointer-events-none" />
+      <div className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
@@ -107,63 +108,55 @@ const Hero = () => {
             </div>
             {/* Right Content */}
             <div className="relative">
-              {/* Decorative Elements */}
-              <div className="absolute top-0 right-20 flex gap-2">
-                <div className="w-16 h-16 rounded-full border-4 border-lime-400"></div>
-                <div className="w-16 h-16 rounded-full border-4 border-yellow-500"></div>
-              </div>
-              <div className="absolute bottom-32 right-0">
-                <div className="w-12 h-12 rounded-full bg-yellow-500"></div>
-              </div>
+              <div className="relative mx-auto w-full max-w-[660px] h-[520px] sm:h-[620px]">
+                {/* Small accent rings */}
+                <div className="absolute top-2 right-36 sm:right-44 w-16 h-16 rounded-full border-4 border-lime-400 z-30" />
+                <div className="absolute -top-2 right-22 sm:right-28 w-11 h-11 rounded-full border-4 border-yellow-500 z-30" />
 
-              {/* Profile Image Placeholder */}
-              <div className="relative z-10 transition duration-300 animate-float-item-one">
-                <div className="w-full max-w-md mx-auto aspect-square rounded-full bg-gradient-to-br from-blue-900/30 to-gray-900/30 flex items-end justify-center overflow-hidden">
-                  <div className="w-full h-5/6 bg-gradient-to-t from-blue-400/20 to-transparent rounded-t-full flex items-center justify-center">
-                    <div className="text-6xl">
-                      <MorphingBlob width={400} height={400} variant="bubble" />
-                    </div>
-                  </div>
-                </div>
-                <div className="w-full h-full absolute top-0 left-0 flex items-center justify-center">
-                  <Image
-                    src="/assets/rahat.png"
-                    alt="hero image"
-                    width={300}
-                    height={300}
-                    className="rounded-full w-[450px] h-[450px] object-contain border-4 border-double border-gray-600"
+                {/* Floating particle trails */}
+                <span className="absolute top-5 left-0 w-1.5 h-1.5 rounded-full bg-lime-400 shadow-[0_0_8px_2px_rgba(157,230,0,0.7)] animate-twinkle" />
+                <span className="absolute top-20 left-8 w-1 h-1 rounded-full bg-lime-300 shadow-[0_0_6px_2px_rgba(157,230,0,0.6)] animate-twinkle [animation-delay:0.6s]" />
+                <span className="absolute bottom-20 left-2 w-1.5 h-1.5 rounded-full bg-yellow-400 shadow-[0_0_8px_2px_rgba(234,179,8,0.6)] animate-twinkle [animation-delay:1.2s]" />
+                <span className="absolute top-1/2 right-6 w-1 h-1 rounded-full bg-lime-400 shadow-[0_0_6px_2px_rgba(157,230,0,0.6)] animate-twinkle [animation-delay:1.8s]" />
+                <span className="absolute top-10 right-10 w-1 h-1 rounded-full bg-lime-200 shadow-[0_0_6px_2px_rgba(157,230,0,0.6)] animate-twinkle [animation-delay:0.9s]" />
+                <span className="absolute bottom-6 right-24 w-1 h-1 rounded-full bg-lime-200 shadow-[0_0_6px_2px_rgba(157,230,0,0.6)] animate-twinkle [animation-delay:1.5s]" />
+
+                {/* Ring + photo + sphere group, offset lower-right */}
+                <div className="absolute right-6 bottom-2 sm:right-12 sm:bottom-14 w-[270px] h-[270px] sm:w-[340px] sm:h-[340px]">
+                  {/* Back half of the ring, threads behind the photo */}
+                  <OrbitalRing
+                    id="back"
+                    tilt={-14}
+                    part="back"
+                    className="absolute -inset-20 sm:-inset-28 pointer-events-none animate-spin-slow z-10"
                   />
-                </div>
-              </div>
-              {/* Info Card */}
 
-              {/* <div className="absolute top-1/4 -left-8 bg-gray-900 border border-gray-800 rounded-2xl p-6 max-w-sm z-20">
-                <div className="flex items-start gap-3 mb-4">
-                  <div className="w-2 h-12 bg-lime-400 rounded"></div>
-                  <div>
-                    <p className="text-gray-400 text-sm mb-1">Specialized In</p>
-                    <h3 className="text-white font-bold text-lg leading-tight">
-                      We are creating digital solutions to promote global brands
-                      every day.
-                    </h3>
+                  {/* Profile photo */}
+                  <div className="absolute inset-0 rounded-full glass-frame shadow-[0_0_50px_-10px_rgba(157,230,0,0.4)] overflow-hidden z-20 animate-float-item-one">
+                    <Image
+                      src="/assets/rahat.png"
+                      alt="hero image"
+                      // fill
+                      width={340}
+                      height={340}
+                      sizes="(max-width: 640px) 270px, 340px"
+                      className="object-fit object-[center_18%] scale-[1.4]"
+                    />
                   </div>
-                </div>
 
-                <p className="text-gray-400 text-sm mb-4">
-                  I create websites, effective SEO, and creative graphics that
-                  help brands grow.
-                </p>
+                  {/* Gold sphere, overlapping the ring's lower-right edge */}
+                  <div className="absolute -bottom-4 -right-14 sm:-right-18 w-20 h-20 sm:w-24 sm:h-24 rounded-full gold-sphere shadow-[0_0_40px_-6px_rgba(212,160,23,0.7)] animate-float-item-two z-30" />
 
-                <button className="flex items-center gap-2 text-white hover:text-lime-400 transition">
-                  <span className="font-semibold">Download CV</span>
-                  <Download size={18} />
-                </button>
-              </div> */}
+                  {/* Front half of the ring, threads in front of the photo */}
+                  <OrbitalRing
+                    id="front"
+                    tilt={-14}
+                    part="front"
+                    className="absolute -inset-20 sm:-inset-28 pointer-events-none animate-spin-slow z-40"
+                  />
 
-              {/* Social Media */}
-              <div className="absolute bottom-0 right-0 z-20">
-                <div className="flex items-center gap-4">
-                  <div className="flex gap-2">
+                  {/* Social Media */}
+                  <div className="absolute -bottom-9 -right-9 sm:-right-11 z-50 flex gap-2">
                     <a
                       href="#"
                       className="w-10 h-10 rounded-full bg-lime-400 flex items-center justify-center hover:bg-lime-300 transition"
@@ -191,6 +184,30 @@ const Hero = () => {
                   </div>
                 </div>
               </div>
+              {/* Info Card */}
+
+              {/* <div className="absolute top-1/4 -left-8 bg-gray-900 border border-gray-800 rounded-2xl p-6 max-w-sm z-20">
+                <div className="flex items-start gap-3 mb-4">
+                  <div className="w-2 h-12 bg-lime-400 rounded"></div>
+                  <div>
+                    <p className="text-gray-400 text-sm mb-1">Specialized In</p>
+                    <h3 className="text-white font-bold text-lg leading-tight">
+                      We are creating digital solutions to promote global brands
+                      every day.
+                    </h3>
+                  </div>
+                </div>
+
+                <p className="text-gray-400 text-sm mb-4">
+                  I create websites, effective SEO, and creative graphics that
+                  help brands grow.
+                </p>
+
+                <button className="flex items-center gap-2 text-white hover:text-lime-400 transition">
+                  <span className="font-semibold">Download CV</span>
+                  <Download size={18} />
+                </button>
+              </div> */}
             </div>
           </div>
         </div>

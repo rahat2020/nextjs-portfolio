@@ -86,3 +86,103 @@ html {
 .animate-bounce-slow {
   animation: bounce-slow 2s ease-in-out infinite;
 }
+
+/* Orbital rings around the hero profile frame */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate-spin-slow {
+  animation: spin-slow 14s linear infinite;
+}
+.animate-spin-slower {
+  animation: spin-slow 22s linear infinite reverse;
+}
+
+/* Twinkling particle trails */
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.15;
+    transform: scale(0.7);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+.animate-twinkle {
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+/* Shimmering gold sphere */
+@keyframes shimmer-sphere {
+  0%,
+  100% {
+    background-position: 30% 30%;
+  }
+  50% {
+    background-position: 65% 65%;
+  }
+}
+.gold-sphere {
+  background-image: radial-gradient(
+    circle at 35% 30%,
+    #fff7d6 0%,
+    #ffe28a 18%,
+    #d4a017 55%,
+    #7a4e00 100%
+  );
+  background-size: 160% 160%;
+  animation: shimmer-sphere 5s ease-in-out infinite;
+}
+
+/* Glowing perspective floor grid, anchored to the bottom of the hero */
+.hero-grid-bg {
+  position: absolute;
+  left: -10%;
+  right: -10%;
+  bottom: 0;
+  height: 45%;
+  background-image: linear-gradient(
+      rgba(157, 230, 0, 0.4) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(157, 230, 0, 0.4) 1px, transparent 1px);
+  background-size: 46px 46px;
+  transform: perspective(280px) rotateX(62deg);
+  transform-origin: bottom;
+  mask-image: linear-gradient(to top, black 0%, transparent 85%);
+  -webkit-mask-image: linear-gradient(to top, black 0%, transparent 85%);
+  opacity: 0.7;
+}
+
+/* Frosted-glass circular frame */
+.glass-frame {
+  background: radial-gradient(
+    circle at 35% 30%,
+    rgba(255, 255, 255, 0.12),
+    rgba(255, 255, 255, 0.03)
+  );
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(157, 230, 0, 0.25);
+}
+
+/* Larger, glowing frosted-glass backdrop circle sitting behind the orbital rings */
+.glass-frame-big {
+  background: radial-gradient(
+    circle at 40% 35%,
+    rgba(157, 230, 0, 0.28),
+    rgba(157, 230, 0, 0.08) 55%,
+    transparent 78%
+  );
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border: 1px solid rgba(157, 230, 0, 0.25);
+  box-shadow: 0 0 120px 30px rgba(157, 230, 0, 0.12);
+}

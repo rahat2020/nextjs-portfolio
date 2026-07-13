@@ -42,7 +42,7 @@ export default function AboutMe({ about }) {
   const avatar = profile.avatar || fallbackAbout.avatar;
   const name = profile.full_name || fallbackAbout.full_name;
   const jobTitle = profile.job_title || fallbackAbout.job_title;
-console.log('profile', profile)
+
   return (
     <div
       id="aboutme"
@@ -54,7 +54,9 @@ console.log('profile', profile)
             <div className="relative z-10 transition duration-300 animate-float-item-one">
               <div className="w-full max-w-md mx-auto aspect-square rounded-full bg-gradient-to-br from-blue-900/30 to-gray-900/30 flex items-end justify-center overflow-hidden">
                 <div className="w-full h-5/6 bg-gradient-to-t from-blue-400/20 to-transparent rounded-t-full flex items-center justify-center">
-                  <div className="text-6xl">{profile.short_name?.charAt(0) || name.charAt(0)}</div>
+                  <div className="text-6xl">
+                    {profile.short_name?.charAt(0) || name.charAt(0)}
+                  </div>
                 </div>
               </div>
               <div className="w-full h-full absolute top-0 left-0 flex items-center justify-center">
