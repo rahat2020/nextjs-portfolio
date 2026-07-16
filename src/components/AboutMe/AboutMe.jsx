@@ -13,8 +13,8 @@ import {
   MessageSquare,
 } from "react-feather";
 import Image from "next/image";
-import { MorphingBlob } from "../UI/svg/MorphingBlob";
 import AppButton from "../UI/AppButton";
+import { MorphingBlob } from "../UI/svg/MorphingBlob";
 
 const fallbackAbout = {
   full_name: "Kazi Rahat",
