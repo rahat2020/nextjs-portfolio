@@ -2,7 +2,7 @@
 
 export async function getAbout() {
   try {
-    const { data } = await apiFetch("/about");
+    const { data } = await apiFetch("/about", { tags: ["about"] });
     return data;
   } catch (err) {
     if (err instanceof ApiError && err.status === 404) return null;

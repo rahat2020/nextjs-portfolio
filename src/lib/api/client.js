@@ -22,9 +22,9 @@ function buildUrl(path, params) {
   return url;
 }
 
-export async function apiFetch(path, { revalidate = 3600, params } = {}) {
+export async function apiFetch(path, { revalidate = 3600, params, tags } = {}) {
   const url = buildUrl(path, params);
-  const res = await fetch(url, { next: { revalidate } });
+  const res = await fetch(url, { next: { revalidate, tags } });
   const json = await res.json().catch(() => null);
 
   if (!res.ok || !json?.success) {
