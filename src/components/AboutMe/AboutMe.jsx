@@ -70,26 +70,38 @@ export default function AboutMe({ about }) {
 
   const showAvatar = isVisible("avatar");
   const showYears = isVisible("years_of_experience");
-  const showProjects = isVisible("projects_completed") && !!profile.projects_completed;
+  const showProjects =
+    isVisible("projects_completed") && !!profile.projects_completed;
   const showStatsBadge = showYears || showProjects;
 
   const visibleSkills = isVisible("skills") ? profile.skills || [] : [];
-  const visibleGallery = isVisible("gallery_images") ? profile.gallery_images || [] : [];
+  const visibleGallery = isVisible("gallery_images")
+    ? profile.gallery_images || []
+    : [];
   const visibleCustomFields = (profile.custom_fields || []).filter(
-    (field) => field.visible !== false
+    (field) => field.visible !== false,
   );
   const visibleSocialLinks = SOCIAL_LINKS.filter(
-    (social) => profile[social.key] && isVisible(social.key)
+    (social) => profile[social.key] && isVisible(social.key),
   );
 
   const infoItems = [
     isVisible("full_name") && { label: "Name", value: name },
-    isVisible("phone") && profile.phone && { label: "Phone", value: profile.phone },
-    isVisible("email") && profile.email && { label: "Email", value: profile.email },
-    isVisible("location") && profile.location && { label: "Location", value: profile.location },
+    isVisible("phone") &&
+      profile.phone && { label: "Phone", value: profile.phone },
+    isVisible("email") &&
+      profile.email && { label: "Email", value: profile.email },
+    isVisible("location") &&
+      profile.location && { label: "Location", value: profile.location },
     isVisible("linkedin_link") &&
-      profile.linkedin_link && { label: "LinkedIn", value: getLinkedinLabel(profile.linkedin_link) },
-    ...visibleCustomFields.map((field) => ({ label: field.label, value: field.value })),
+      profile.linkedin_link && {
+        label: "LinkedIn",
+        value: getLinkedinLabel(profile.linkedin_link),
+      },
+    ...visibleCustomFields.map((field) => ({
+      label: field.label,
+      value: field.value,
+    })),
   ].filter(Boolean);
 
   return (
@@ -128,7 +140,9 @@ export default function AboutMe({ about }) {
                     <div className="text-5xl font-bold text-white mb-1">
                       {formatYears(profile.years_of_experience)}
                     </div>
-                    <div className="text-gray-300 text-sm">Years Experience</div>
+                    <div className="text-gray-300 text-sm">
+                      Years Experience
+                    </div>
                   </div>
                 )}
                 {showProjects && (
@@ -174,7 +188,9 @@ export default function AboutMe({ about }) {
                 {infoItems.map((item) => (
                   <div key={item.label}>
                     <p className="text-gray-400 text-sm mb-1">{item.label}:</p>
-                    <p className="text-white font-semibold break-words">{item.value}</p>
+                    <p className="text-white font-semibold break-words">
+                      {item.value}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -210,11 +226,11 @@ export default function AboutMe({ about }) {
               </div>
             )}
 
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+            <div className="flex w-full items-center gap-3 gap-y-3 pt-2">
               <AppButton
                 title="Read More"
                 icon={BookOpen}
-                className="bg-lime-400 text-black hover:bg-lime-300"
+                className="bg-lime-400 text-black hover:bg-lime-300 px-4! py-3 text-sm font-semibold rounded-ful transition-colors"
               />
               {isVisible("resume_url") && profile.resume_url && (
                 <a
@@ -226,27 +242,33 @@ export default function AboutMe({ about }) {
                   <Download size={16} /> View Resume
                 </a>
               )}
-              <div className="flex items-center gap-4">
-                {showAvatar && (
-                  <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-lime-400">
-                    <Image
-                      src={avatar}
-                      alt={name}
-                      width={30}
-                      height={30}
-                      className="w-full h-full object-fill"
-                    />
+              {(showAvatar ||
+                isVisible("full_name") ||
+                (isVisible("job_title") && jobTitle)) && (
+                <div className="flex items-center gap-3 sm:ml-auto sm:pl-6 sm:border-l sm:border-gray-800">
+                  {showAvatar && (
+                    <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-lime-400 flex-shrink-0">
+                      <Image
+                        src={avatar}
+                        alt={name}
+                        width={48}
+                        height={48}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  )}
+                  <div>
+                    {isVisible("full_name") && (
+                      <h4 className="text-white font-bold text-base leading-tight">
+                        {name}
+                      </h4>
+                    )}
+                    {isVisible("job_title") && jobTitle && (
+                      <p className="text-gray-400 text-xs">{jobTitle}</p>
+                    )}
                   </div>
-                )}
-                <div>
-                  {isVisible("full_name") && (
-                    <h4 className="text-white font-bold text-lg">{name}</h4>
-                  )}
-                  {isVisible("job_title") && jobTitle && (
-                    <p className="text-gray-400 text-sm">{jobTitle}</p>
-                  )}
                 </div>
-              </div>
+              )}
             </div>
           </div>
         </div>
