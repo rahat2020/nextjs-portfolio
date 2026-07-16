@@ -69,7 +69,7 @@ export default function ContactMe({ about }) {
     if (!accessKey) {
       setStatus("error");
       setErrorMessage(
-        "Contact form isn't configured yet - missing Web3Forms access key."
+        "Contact form isn't configured yet - missing Web3Forms access key.",
       );
       return;
     }
@@ -120,11 +120,12 @@ export default function ContactMe({ about }) {
               <div className="w-16 h-16 bg-gradient-to-br from-lime-500 to-green-700 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-lime-900/30 transition-transform duration-300 group-hover:scale-110">
                 <Icon className="w-7 h-7 text-white" />
               </div>
-              <h3 className="text-white text-xl font-semibold mb-3">
-                {title}
-              </h3>
+              <h3 className="text-white text-xl font-semibold mb-3">{title}</h3>
               {lines.map((line) => (
-                <p key={line} className="text-gray-400 text-sm leading-relaxed break-words">
+                <p
+                  key={line}
+                  className="text-gray-400 text-sm leading-relaxed break-words"
+                >
                   {line}
                 </p>
               ))}
@@ -210,15 +211,15 @@ export default function ContactMe({ about }) {
                     status === "loading"
                       ? "Sending..."
                       : status === "success"
-                      ? "Message Sent"
-                      : "Appointment Now"
+                        ? "Message Sent"
+                        : "Contact Now"
                   }
                   icon={
                     status === "loading"
                       ? Loader
                       : status === "success"
-                      ? CheckCircle
-                      : MessageCircle
+                        ? CheckCircle
+                        : MessageCircle
                   }
                   disabled={status === "loading"}
                   className={`w-full justify-center ${

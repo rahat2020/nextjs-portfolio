@@ -40,6 +40,7 @@ const Hero = () => {
                 <AppButton
                   title="Hire me now"
                   icon={Briefcase}
+                  callback={() => (window.location.href = "#contact")}
                   className="bg-lime-400 text-black hover:bg-lime-300"
                 />
                 <Link
