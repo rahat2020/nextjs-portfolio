@@ -3,13 +3,14 @@ import { apiFetch, ApiError } from "./client";
 export async function getPosts({ page, limit } = {}) {
   const { data, meta } = await apiFetch("/posts", {
     params: { page, limit },
+    tags: ["posts"],
   });
   return { posts: data, meta };
 }
 
 export async function getPostBySlug(slug) {
   try {
-    const { data } = await apiFetch(`/posts/${slug}`);
+    const { data } = await apiFetch(`/posts/${slug}`, { tags: ["posts"] });
     return data;
   } catch (err) {
     if (err instanceof ApiError && err.status === 404) return null;
